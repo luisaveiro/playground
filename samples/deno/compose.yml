@@ -1,0 +1,33 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Deno sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Deno app container.
+  deno:
+    # https://hub.docker.com/r/denoland/deno
+    image: denoland/deno:latest
+    container_name: ${APP_CONTAINER_NAME:-deno_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:8000
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Execute the Deno CLI run command.
+    # https://deno.land/manual/getting_started/command_line_interface
+    command: ["run", "--watch", "--allow-net", "app.ts"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-deno_local}"
