@@ -1,0 +1,30 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Bash sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Bash app container.
+  bash:
+    # https://hub.docker.com/_/ubuntu
+    image: ubuntu:latest
+    container_name: ${APP_CONTAINER_NAME:-bash_app}
+    networks:
+      - local
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Run the Bash app container Shell.
+    command: ["/bin/bash"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-bash_local}"
