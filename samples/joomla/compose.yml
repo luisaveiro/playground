@@ -1,0 +1,68 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Joomla sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Joomla app container.
+  joomla:
+    # https://hub.docker.com/_/joomla
+    image: joomla:latest
+    container_name: ${APP_CONTAINER_NAME:-joomla_app}
+    depends_on:
+      - mysql
+    # https://hub.docker.com/_/joomla
+    # Go to How to use this image.
+    environment:
+      JOOMLA_DB_HOST: mysql
+      JOOMLA_DB_USER: "${DB_USERNAME}"
+      JOOMLA_DB_PASSWORD: "${DB_PASSWORD}"
+      JOOMLA_DB_NAME: "${DB_DATABASE:-joomla}"
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:80
+    volumes:
+      - .${CODE_DIR:-/code}:/var/www/html
+
+  # The MySQL database container.
+  mysql:
+    # https://hub.docker.com/_/mysql
+    image: mysql:latest
+    container_name: ${DB_CONTAINER_NAME:-joomla_db}
+    # https://hub.docker.com/_/mysql
+    # Go to Environment variables.
+    environment:
+      MYSQL_DATABASE: "${DB_DATABASE:-joomla}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-u", "root"]
+      retries: 3
+      timeout: 5s
+    networks:
+      - local
+    platform: linux/x86_64
+    # Map the database container exposed port to the host port.
+    ports:
+     - ${DB_PORT:-3306}:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-joomla_local}"
+
+# The Docker volumes.
+volumes:
+  mysql_data:
+    driver: "local"
+    name: "${DB_VOLUME_NAME:-joomla_db_data}"
