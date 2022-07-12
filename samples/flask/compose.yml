@@ -1,0 +1,41 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Flask sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Flask app container.
+  flask:
+    # Build the Docker image from the Dockerfile.
+    build:
+      context: '.'
+    image: flask:latest
+    container_name: ${APP_CONTAINER_NAME:-flask_app}
+    # https://flask.palletsprojects.com/en/latest/cli/
+    # Go to Environment Variables From dotenv.
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:5000
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/src/app
+    working_dir: /src
+    # Start the Flask CLI dev server
+    # https://flask.palletsprojects.com/en/latest/cli/
+    command: bash -c ". venv/bin/activate && \
+      cd app && \
+      flask run --host=0.0.0.0"
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-flask_local}"
