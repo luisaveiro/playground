@@ -1,0 +1,30 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the PHP CLI sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The PHP CLI app container.
+  php-cli:
+    # https://hub.docker.com/_/php
+    image: php:latest
+    container_name: ${APP_CONTAINER_NAME:-php-cli_app}
+    networks:
+      - local
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Run the PHP CLI app container Shell.
+    command: ["/bin/sh"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-php-cli_local}"
