@@ -1,0 +1,37 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Redwood sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Redwood app container.
+  redwood:
+    # https://hub.docker.com/_/node
+    image: node:16-alpine
+    container_name: ${APP_CONTAINER_NAME:-redwood_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:8910
+      - ${API_PORT:-81}:8911
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Redwood CLI dev server.
+    # https://redwoodjs.com/docs/cli-commands#dev
+    command: [
+      'yarn', 'rw', 'dev',
+      '--fwd="--host=0.0.0.0 --allowed-hosts all"'
+    ]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-redwood_local}"
