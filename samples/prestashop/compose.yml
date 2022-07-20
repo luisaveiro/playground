@@ -1,0 +1,66 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the PrestaShop sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The PrestaShop app container.
+  prestashop:
+    # https://hub.docker.com/r/prestashop/prestashop
+    image: prestashop/prestashop:latest
+    container_name: ${APP_CONTAINER_NAME:-prestashop_app}
+    depends_on:
+      - mysql
+    # https://hub.docker.com/r/prestashop/prestashop
+    # Go to How to run this image.
+    environment:
+      PS_DEV_MODE: true
+      PS_DOMAIN: http://localhost:${APP_PORT:-80}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:80
+    volumes:
+      - .${CODE_DIR:-/code}:/var/www/html
+
+  # The MySQL database container.
+  mysql:
+    # https://hub.docker.com/_/mysql
+    image: mysql:latest
+    container_name: ${DB_CONTAINER_NAME:-prestashop_db}
+    # https://hub.docker.com/_/mysql
+    # Go to Environment variables.
+    environment:
+      MYSQL_DATABASE: "${DB_DATABASE:-prestashop}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-u", "root"]
+      retries: 3
+      timeout: 5s
+    networks:
+      - local
+    platform: linux/x86_64
+    # Map the database container exposed port to the host port.
+    ports:
+     - ${DB_PORT:-3306}:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-prestashop_local}"
+
+# The Docker volumes.
+volumes:
+  mysql_data:
+    driver: "local"
+    name: "${DB_VOLUME_NAME:-prestashop_db_data}"
