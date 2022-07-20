@@ -1,0 +1,30 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Python sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Python app container.
+  python:
+    # https://hub.docker.com/_/python
+    image: python:latest
+    container_name: ${APP_CONTAINER_NAME:-python_app}
+    networks:
+      - local
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Run the Python app container Shell.
+    command: ["/bin/sh"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-python_local}"
