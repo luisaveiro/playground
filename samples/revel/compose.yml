@@ -1,0 +1,35 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Revel sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Revel app container.
+  revel:
+    # Build the Docker image from the Dockerfile.
+    build:
+      context: '.'
+    image: revel:latest
+    container_name: ${APP_CONTAINER_NAME:-revel_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:9000
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Revel CLI dev server.
+    # http://revel.github.io/manual/tool.html#run
+    command: ["revel", "run", "-a", "app"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-revel_local}"
