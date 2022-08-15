@@ -1,0 +1,39 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Hugo sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Hugo app container.
+  hugo:
+    # Build the Docker image from the Dockerfile.
+    build:
+      context: '.'
+    image: hugo:latest
+    container_name: ${APP_CONTAINER_NAME:-hugo_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:${APP_PORT:-80}
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Hugo CLI dev server - https://gohugo.io/commands/hugo_server
+    command: [
+      "hugo", "server",
+      "--buildDrafts",
+      "--bind", "0.0.0.0",
+      "--port", "${APP_PORT:-80}"
+    ]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-hugo_local}"
