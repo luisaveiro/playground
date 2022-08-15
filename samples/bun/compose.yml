@@ -1,0 +1,37 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Bun sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Docker services
+services:
+  # The Bun app container
+  bun:
+    # Build the Docker image from the Dockerfile.
+    build:
+      context: '.'
+    image: bun:latest
+    init: true
+    container_name: ${APP_CONTAINER_NAME:-bun_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:3000
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Bun CLI dev server.
+    # https://github.com/Jarred-Sumner/bun
+    command: ["bun", "run", "./app.js"]
+
+# Docker networks
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-bun_local}"
