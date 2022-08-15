@@ -147,91 +147,120 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **45** samples included in the ***Playground*** repository. 
+There are currently **47** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
-- Programming Languages ("Hello, World!")
-- Blog
-- CMS
-- E-commerce
-- Framework
-- Full Stack Framework
-- Headless CMS
-- Slides
-- Static Site Generator
+<details>
+<summary><b>Programming Languages</b></summary>
+  <ul>
+    <li>Bash</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Dart</li>
+    <li>Elixir</li>
+    <li>Erlang</li>
+    <li>Golang</li>
+    <li>Java</li>
+    <li>PHP (Apache)</li>
+    <li>PHP (CLI)</li>
+    <li>Python</li>
+    <li>Ruby</li>
+    <li>Rust</li>
+    <li>Swift</li>
+  </ul>
+</details>
 
-#### <ins>Programming Languages</ins>
+<details>
+<summary><b>Blogs</b></summary>
+  <ul>
+    <li>Ghost</li>
+  </ul>
+</details>
 
-- Bash
-- C
-- C++
-- Dart
-- Deno
-- Elixir
-- Erlang
-- Golang
-- Java
-- Node
-- PHP (CLI)
-- Python
-- Ruby
-- Rust
-- Swift
+<details>
+<summary><b>CMS</b></summary>
+  <ul>
+    <li>ApostropheCMS</li>
+    <li>Drupal</li>
+    <li>Joomla</li>
+    <li>WordPress</li>
+  </ul>
+</details>
 
-#### <ins>Blog</ins>
+<details>
+<summary><b>E-commerce</b></summary>
+  <ul>
+    <li>PrestaShop</li>
+  </ul>
+</details>
 
-- Ghost
+<details>
+<summary><b>Frameworks</b></summary>
+  <ul>
+    <li>Angular</li>
+    <li>Egg</li>
+    <li>Express</li>
+    <li>Flask</li>
+    <li>Fresh</li>
+    <li>Gin</li>
+    <li>Lit (Vite)</li>
+    <li>NestJS</li>
+    <li>Preact (Vite)</li>
+    <li>React (Vite)</li>
+    <li>Revel</li>
+    <li>Rocket</li>
+    <li>Solid</li>
+    <li>Svelte (Vite)</li>
+    <li>Vue (Vite)</li>
+  </ul>
+</details>
 
-#### <ins>CMS</ins>
+<details>
+<summary><b>Full Stack Frameworks (FSF)</b></summary>
+  <ul>
+    <li>Copper</li>
+    <li>Next.js</li>
+    <li>Nuxt</li>
+    <li>Redwood</li>
+    <li>Remix</li>
+    <li>Ruby on Rails</li>
+    <li>SvelteKit</li>
+  </ul>
+</details>
 
-- ApostropheCMS
-- Drupal
-- Joomla
-- WordPress
+<details>
+<summary><b>Headless CMS</b></summary>
+  <ul>
+    <li>Strapi</li>
+  </ul>
+</details>
 
-#### <ins>E-commerce</ins>
+<details>
+<summary><b>JavaScript Runtimes</b></summary>
+  <ul>
+    <li>Bun</li>
+    <li>Deno</li>
+    <li>Node</li>
+  </ul>
+</details>
 
-- PrestaShop
+<details>
+<summary><b>Slides</b></summary>
+  <ul>
+    <li>slidev</li>
+  </ul>
+</details>
 
-#### <ins>Framework</ins>
-
-- Angular
-- Egg
-- Express
-- Flask
-- Fresh
-- Gin
-- NestJS
-- Revel
-- Rocket
-- Solid
-- Vite
-
-#### <ins>Full Stack Framework (FSF)</ins>
-
-- Copper
-- Next.js
-- Nuxt
-- Redwood
-- Remix
-- Ruby on Rails
-- SvelteKit
-
-#### <ins>Headless CMS</ins>
-
-- Strapi
-
-#### <ins>Slides</ins>
-
-- slidev
-
-#### <ins>Static Site Generator (SSG)</ins>
-
-- Astro
-- Docusaurus
-- Gatsby
-- VuePress
+<details>
+<summary><b>Static Site Generators (SSG)</b></summary>
+  <ul>
+    <li>Astro</li>
+    <li>Docusaurus</li>
+    <li>Gatsby</li>
+    <li>VuePress</li>
+  </ul>
+</details>
 
 ## FAQ
 
