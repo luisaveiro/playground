@@ -292,7 +292,7 @@ collection of Docker Compose files for relational and NoSQL databases. Which
 aims to offer a simple approach to setting up databases for a local environment.
 
 [Docker Reverse Proxy](https://github.com/luisaveiro/docker-reverse-proxy) 
-offers a simple approach to have Caddy Server has a local reverse proxy for 
+offers a simple approach to having a Caddy Server as a local reverse proxy for 
 your Docker containers.
 
 [Programiz](https://www.programiz.com/) let's you learn to code in Python, 
