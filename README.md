@@ -147,7 +147,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **47** samples included in the ***Playground*** repository. 
+There are currently **48** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -258,6 +258,7 @@ stacks:
     <li>Astro</li>
     <li>Docusaurus</li>
     <li>Gatsby</li>
+    <li>Hugo</li>
     <li>VuePress</li>
   </ul>
 </details>
