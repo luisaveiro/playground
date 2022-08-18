@@ -32,6 +32,7 @@
   <a href="#contributing">Contributing</a> •
   <a href="#security-vulnerabilities">Security Vulnerabilities</a> •
   <a href="#credits">Credits</a> •
+  <a href="#Sponsor">Sponsor</a> •
   <a href="#license">License</a>
 </p>
 
@@ -338,6 +339,15 @@ The illustration used in the project is from
 [unDraw (created by Katerina Limpitsouni)](https://undraw.co/). All product 
 names, logos, brands, trademarks and registered trademarks are property of 
 their respective owners.
+
+## Sponsor
+
+Do you like this project? Support it by donating.
+
+<a href="https://www.buymeacoffee.com/luisaveiro">
+  <img src="./images/bmc-button.svg" alt="Code Review" width="144">
+</a>
+
 
 ## License
 
