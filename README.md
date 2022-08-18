@@ -147,7 +147,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **48** samples included in the ***Playground*** repository. 
+There are currently **49** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -219,6 +219,7 @@ stacks:
 <details>
 <summary><b>Full Stack Frameworks (FSF)</b></summary>
   <ul>
+    <li>Blitz</li>
     <li>Copper</li>
     <li>Next.js</li>
     <li>Nuxt</li>
