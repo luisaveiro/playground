@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.2.0] - 2022-08-29
+### Added
+- Tech stack samples:  
+Ackee, Blitz, Bun, Hugo, PHP (Apache)
+
 ## [v0.1.0] - 2022-08-01
 ### Added
 - Tech stack samples:  
