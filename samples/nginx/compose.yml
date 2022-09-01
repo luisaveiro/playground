@@ -1,0 +1,29 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Nginx sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Nginx app container
+  nginx:
+    # https://hub.docker.com/_/nginx
+    image: nginx:alpine
+    container_name: ${APP_CONTAINER_NAME:-nginx_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:80
+    volumes:
+      - .${CODE_DIR:-/code}:/usr/share/nginx/html
+      - .${CONFIG_DIR:-/config}/default.conf:/etc/nginx/conf.d/default.conf
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-nginx_local}"
