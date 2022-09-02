@@ -148,7 +148,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **50** samples included in the ***Playground*** repository. 
+There are currently **56** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -187,12 +187,20 @@ stacks:
 </details>
 
 <details>
-<summary><b>CMS</b></summary>
+<summary><b>Content Management Systems (CMS)</b></summary>
   <ul>
     <li>ApostropheCMS</li>
     <li>Drupal</li>
     <li>Joomla</li>
     <li>WordPress</li>
+  </ul>
+</details>
+
+<details>
+<summary><b>CSS Frameworks</b></summary>
+  <ul>
+    <li>Bootstrap</li>
+    <li>Tailwind CSS</li>
   </ul>
 </details>
 
@@ -207,6 +215,7 @@ stacks:
 <summary><b>Frameworks</b></summary>
   <ul>
     <li>Angular</li>
+    <li>Django</li>
     <li>Egg</li>
     <li>Express</li>
     <li>Flask</li>
@@ -257,7 +266,7 @@ stacks:
 <details>
 <summary><b>Slides</b></summary>
   <ul>
-    <li>slidev</li>
+    <li>Slidev</li>
   </ul>
 </details>
 
@@ -269,6 +278,15 @@ stacks:
     <li>Gatsby</li>
     <li>Hugo</li>
     <li>VuePress</li>
+  </ul>
+</details>
+
+<details>
+<summary><b>Web Servers</b></summary>
+  <ul>
+    <li>Apache</li>
+    <li>Caddy</li>
+    <li>Nginx</li>
   </ul>
 </details>
 
