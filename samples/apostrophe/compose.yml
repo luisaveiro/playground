@@ -37,7 +37,7 @@ services:
   mongodb:
     # https://hub.docker.com/_/mongo
     image: mongo:latest
-    container_name: "${MONGO_CONTAINER_NAME:-mongodb}"
+    container_name: "${MONGO_CONTAINER_NAME:-apostrophe_mongodb}"
     # https://hub.docker.com/_/mongo
     # Go to Configuration -> Environment variables.
     environment:
