@@ -148,7 +148,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **56** samples included in the ***Playground*** repository. 
+There are currently **57** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -250,6 +250,7 @@ stacks:
 <details>
 <summary><b>Headless CMS</b></summary>
   <ul>
+    <li>Directus</li>
     <li>Strapi</li>
   </ul>
 </details>
