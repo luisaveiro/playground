@@ -148,7 +148,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **57** samples included in the ***Playground*** repository. 
+There are currently **58** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -252,6 +252,7 @@ stacks:
   <ul>
     <li>Directus</li>
     <li>Strapi</li>
+    <li>Tina</li>
   </ul>
 </details>
 
