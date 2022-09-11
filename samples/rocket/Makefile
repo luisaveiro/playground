@@ -26,8 +26,4 @@ endif
 # https://github.com/SergioBenitez/Rocket
 #--------------------------------------------------------------------------
 rocket:
-	exec docker run -it --rm --name playground \
-    -v $(PWD)${CODE_DIR}:/app \
-    -w="/app" \
-    rust:latest /bin/sh -c \
-      "git clone https://github.com/SergioBenitez/Rocket ."
+	git clone https://github.com/SergioBenitez/Rocket code
