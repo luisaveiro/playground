@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.4.0] - 2022-09-11
+### Added
+- Tech stack samples:  
+Directus, Fiber, Jekyll, Tina
+
+### Changed
+- Simplified Rocket make command.
+
+### Fixed
+- Typo in Apostrophe Docker Compose sample.
+
 ## [v0.3.0] - 2022-09-02
 ### Added
 - Tech stack samples:  
