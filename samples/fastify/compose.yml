@@ -1,0 +1,35 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Fastify sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Fastify app container.
+  fastify:
+    # https://hub.docker.com/_/node
+    image: node:latest
+    container_name: ${APP_CONTAINER_NAME:-fastify_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:3000
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the fastify CLI dev server.
+    # https://www.fastify.io/docs/latest/Guides/Getting-Started
+    command: [
+      "npm", "run", "dev"
+    ]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-fastify_local}"
