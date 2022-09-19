@@ -1,0 +1,33 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Lume sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Lume app container.
+  lume:
+    # https://hub.docker.com/r/denoland/deno
+    image: denoland/deno:latest
+    container_name: ${APP_CONTAINER_NAME:-lume_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:3000
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Execute the Deno task runner.
+    # https://lume.land/docs/overview/command-line/#start-a-local-server
+    command: ["deno", "task", "serve"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-lume_local}"
