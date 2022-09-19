@@ -148,7 +148,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **61** samples included in the ***Playground*** repository. 
+There are currently **62** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -219,6 +219,7 @@ stacks:
     <li>Django</li>
     <li>Egg</li>
     <li>Express</li>
+    <li>Fastify</li>
     <li>Fiber</li>
     <li>Flask</li>
     <li>Fresh</li>
