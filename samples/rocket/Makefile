@@ -26,4 +26,4 @@ endif
 # https://github.com/SergioBenitez/Rocket
 #--------------------------------------------------------------------------
 rocket:
-	git clone https://github.com/SergioBenitez/Rocket code
+	git clone https://github.com/SergioBenitez/Rocket $(PWD)${CODE_DIR}
