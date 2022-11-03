@@ -219,7 +219,7 @@ stacks:
   <ul>
     <li>AdonisJS</li>
     <li>Alpine.js</li>
-    <li>Angular</li>
+    <li>Angular (Angular CLI)</li>
     <li>Django</li>
     <li>Egg</li>
     <li>Express</li>
@@ -231,7 +231,6 @@ stacks:
     <li>Lit (Vite)</li>
     <li>NestJS</li>
     <li>Preact (Vite)</li>
-    <li>React (Vite)</li>
     <li>Revel</li>
     <li>Rocket</li>
     <li>Solid</li>
@@ -260,6 +259,13 @@ stacks:
     <li>Directus</li>
     <li>Strapi</li>
     <li>Tina</li>
+  </ul>
+</details>
+
+<details>
+<summary><b>JavaScript Libraries</b></summary>
+  <ul>
+    <li>React (Vite)</li>
   </ul>
 </details>
 
