@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.5.0] - 2022-11-03
+### Added
+- Tech stack samples:  
+AdonisJS, Alpine.js, Fastify, Lume, VitePress
+
+### Changed
+- Simplified Fiber make command.
+
+### Fixed
+- Bootstrap sample not loading CDN links.
+- Rocket make command use hardcoded directory.
+
 ## [v0.4.0] - 2022-09-11
 ### Added
 - Tech stack samples:  
