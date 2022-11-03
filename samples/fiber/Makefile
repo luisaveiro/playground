@@ -26,4 +26,4 @@ endif
 # https://github.com/gofiber/recipes
 #--------------------------------------------------------------------------
 fiber:
-	git clone https://github.com/gofiber/recipes.git code
+	git clone https://github.com/gofiber/recipes.git $(PWD)${CODE_DIR}
