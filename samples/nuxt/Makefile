@@ -21,13 +21,14 @@ endif
 #--------------------------------------------------------------------------
 # Makefile target.
 #
-# The `nuxt` target executes the Yarn `create` command to
+# The `nuxt` target executes the Nuxi `init` command to
 # create a new Nuxt project using Nuxt starter kit.
 #
-# https://nuxtjs.org/docs/get-started/installation#using-create-nuxt-app
+# https://nuxt.com/docs/getting-started/installation#new-project
 #--------------------------------------------------------------------------
 nuxt:
 	exec docker run -it --rm --name playground \
     -v $(PWD)${CODE_DIR}:/app \
     -w="/app" \
-    node:16-alpine /bin/sh -c "yarn create nuxt-app"
+    node:lts-alpine /bin/sh -c \
+      "npx --yes --no-update-notifier nuxi init . && yarn install"
