@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.6.0] - 2022-11-22
+### Added
+- Tech stack samples:  
+Nim
+
+### Changed
+- Nuxt sample to support Nuxt 3.
+- Nuxt sample to use Node LTS Alpine.
+- Nuxt make command to use Nuxt 3 installation command.
+
 ## [v0.5.0] - 2022-11-03
 ### Added
 - Tech stack samples:  
