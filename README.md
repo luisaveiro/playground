@@ -148,7 +148,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **68** samples included in the ***Playground*** repository. 
+There are currently **69** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -296,6 +296,13 @@ stacks:
     <li>Lume</li>
     <li>VitePress</li>
     <li>VuePress</li>
+  </ul>
+</details>
+
+<details>
+<summary><b>Video Frameworks</b></summary>
+  <ul>
+    <li>Remotion</li>
   </ul>
 </details>
 
