@@ -9,6 +9,9 @@ assignees: luisaveiro
 
 <!-- Provide a general summary of the issue in the Title above -->
 
+#### Sample
+<!-- Which playground sample are you having an issue with? -->
+
 #### Description
 <!-- Provide a more detailed introduction to the issue itself, and why you consider it to be a bug. -->
 
