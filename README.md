@@ -148,7 +148,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **71** samples included in the ***Playground*** repository. 
+There are currently **72** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -253,6 +253,7 @@ stacks:
     <li>Remix</li>
     <li>Ruby on Rails</li>
     <li>SvelteKit</li>
+    <li>T3</li>
   </ul>
 </details>
 
