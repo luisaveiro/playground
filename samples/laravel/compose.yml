@@ -1,0 +1,37 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Laravel sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Larave app container.
+  laravel:
+    # https://hub.docker.com/_/php
+    image: php:latest
+    container_name: ${APP_CONTAINER_NAME:-laravel_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:${APP_PORT:-80}
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start Laravel dev server.
+    # https://laravel.com/docs/master/installation#your-first-laravel-project
+    command: [
+      "php", "artisan", "serve",
+      "--port", "${APP_PORT:-80}",
+      "--host", "0.0.0.0"
+    ]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-laravel_local}"
