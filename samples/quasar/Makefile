@@ -21,8 +21,8 @@ endif
 #--------------------------------------------------------------------------
 # Makefile target.
 #
-# The `quasar` target executes the Yarn `create` command to create a new
-# Quasar project using Quasar starter kit.
+# The `quasar` target executes the installer shell script to
+# create a new Quasar project using Quasar starter kit.
 #
 # https://quasar.dev/start/quasar-cli#installation-project-scaffolding
 #--------------------------------------------------------------------------
