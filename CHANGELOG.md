@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.8.1] - 2023-01-08
+### Added
+- TL;DR section in Readme.
+- Tech stack list for samples in Readme.
+
 ## [v0.8.0] - 2023-01-04
 ### Added
 - Tech stack samples:  
