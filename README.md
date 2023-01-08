@@ -18,6 +18,7 @@
 </h4>
 
 <p align="center">
+  <a href="#tldr">TL;DR</a> •
   <a href="#about">About</a> •
   <a href="#disclaimer">Disclaimer</a> •
   <a href="#getting-started">Getting Started</a> •
@@ -35,6 +36,24 @@
   <a href="#Sponsor">Sponsor</a> •
   <a href="#license">License</a>
 </p>
+
+## <a id="tldr"></a> TL;DR
+
+***Playground*** is a collection of Docker Compose files that provides a 
+starting point for how to integrate different services and allows you to learn 
+and experiment with tech stacks samples.
+
+#### Quick Start
+
+1. Clone this repository.
+2. All ***Playground*** samples can be found in `samples` directory.
+3. Copy the DotEnv example file to create your DotEnv file and override the 
+Docker Compose variables.
+4. If the ***Playground*** sample includes a Makefile. You must execute the make 
+command before you can have the ***Playground*** sample set up and running in a 
+Docker container.
+5. Start the ***Playground*** sample by executing the `docker compose up` 
+command.
 
 ## About
 
@@ -178,25 +197,46 @@ stacks:
 <details>
 <summary><b>Analytics Platforms</b></summary>
   <ul>
-    <li>Ackee</li>
+    <li>
+      Ackee<br/>
+      <sup>Tech Stack: <i>JavaScript, Node.js, MongoDB</i>.</sup>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary><b>Blogs</b></summary>
   <ul>
-    <li>Ghost</li>
-    <li>Jekyll</li>
+    <li>
+      Ghost<br/>
+      <sup>Tech Stack: <i>JavaScript, Node.js</i>.</sup>
+    </li>
+    <li>
+      Jekyll<br/>
+      <sup>Tech Stack: <i>Ruby</i>.</sup>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary><b>Content Management Systems (CMS)</b></summary>
   <ul>
-    <li>ApostropheCMS</li>
-    <li>Drupal</li>
-    <li>Joomla</li>
-    <li>WordPress</li>
+    <li>
+      ApostropheCMS<br/>
+      <sup>Tech Stack: <i>JavaScript, Node.js, MongoDB</i>.</sup>
+    </li>
+    <li>
+      Drupal<br/>
+      <sup>Tech Stack: <i>PHP, MariaDB</i></sup>
+    </li>
+    <li>
+      Joomla<br/>
+      <sup>Tech Stack: <i>PHP, MySQL</i></sup>
+    </li>
+    <li>
+      WordPress<br/>
+      <sup>Tech Stack: <i>PHP, MySQL</i></sup>
+    </li>
   </ul>
 </details>
 
@@ -211,60 +251,168 @@ stacks:
 <details>
 <summary><b>E-commerce</b></summary>
   <ul>
-    <li>PrestaShop</li>
+    <li>
+      PrestaShop<br/>
+      <sup>Tech Stack: <i>PHP, MySQL</i></sup>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary><b>Frameworks</b></summary>
   <ul>
-    <li>AdonisJS</li>
-    <li>Alpine.js</li>
-    <li>Angular (Angular CLI)</li>
-    <li>Django</li>
-    <li>Egg</li>
-    <li>Express</li>
-    <li>Fastify</li>
-    <li>Fiber</li>
-    <li>Flask</li>
-    <li>Fresh</li>
-    <li>Gin</li>
-    <li>Lit (Vite)</li>
-    <li>NestJS</li>
-    <li>Preact (Vite)</li>
-    <li>Quasar</li>
-    <li>Revel</li>
-    <li>Rocket</li>
-    <li>Solid</li>
-    <li>Svelte (Vite)</li>
-    <li>Vue (Vite)</li>
+    <li>
+      AdonisJS<br/>
+      <sup>Tech Stack: <i>TypeScript, Node.js</i>.</sup>
+    </li>
+    <li>
+      Alpine.js<br/>
+      <sup>Tech Stack: <i>JavaScript</i>.</sup>
+    </li>
+    <li>
+      Angular (Angular CLI)<br/>
+      <sup>Tech Stack: <i>TypeScript</i>.</sup>
+    </li>
+    <li>
+      Django<br/>
+      <sup>Tech Stack: <i>Python</i>.</sup>
+    </li>
+    <li>
+      Egg<br/>
+      <sup>Tech Stack: <i>JavaScript, Koa, Node.js</i>.</sup>
+    </li>
+    <li>
+      Express<br/>
+      <sup>Tech Stack: <i>JavaScript, Node.js</i>.</sup>
+    </li>
+    <li>
+      Fastify<br/>
+      <sup>Tech Stack: <i>TypeScript, Node.js</i>.</sup>
+    </li>
+    <li>
+      Fiber<br/>
+      <sup>Tech Stack: <i>Golang</i>.</sup>
+    </li>
+    <li>
+      Flask<br/>
+      <sup>Tech Stack: <i>Python</i>.</sup>
+    </li>
+    <li>
+      Fresh<br/>
+      <sup>Tech Stack: <i>TypeScript, Deno</i>.</sup>
+    </li>
+    <li>
+      Gin<br/>
+      <sup>Tech Stack: <i>Golang</i>.</sup>
+    </li>
+    <li>
+      Lit (Vite)<br/>
+      <sup>Tech Stack: <i>JavaScript/TypeScript</i>.</sup>
+    </li>
+    <li>
+      NestJS<br/>
+      <sup>Tech Stack: <i>Node.js</i>.</sup>
+    </li>
+    <li>
+      Preact (Vite)<br/>
+      <sup>Tech Stack: <i>JavaScript/TypeScript</i>.</sup>
+    </li>
+    <li>
+      Quasar<br/>
+      <sup>Tech Stack: <i>JavaScript, Vue.js</i>.</sup>
+    </li>
+    <li>
+      Revel<br/>
+      <sup>Tech Stack: <i>Golang</i>.</sup>
+    </li>
+    <li>
+      Rocket<br/>
+      <sup>Tech Stack: <i>Rust</i>.</sup>
+    </li>
+    <li>
+      Solid<br/>
+      <sup>Tech Stack: <i>JavaScript/TypeScript</i>.</sup>
+    </li>
+    <li>
+      Svelte (Vite)<br/>
+      <sup>Tech Stack: <i>JavaScript/TypeScript</i>.</sup>
+    </li>
+    <li>
+      Vue (Vite)<br/>
+      <sup>Tech Stack: <i>JavaScript/TypeScript</i>.</sup>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary><b>Full Stack Frameworks (FSF)</b></summary>
   <ul>
-    <li>Analog</li>
-    <li>Blitz</li>
-    <li>Copper</li>
-    <li>JD App</li>
-    <li>Laravel</li>
-    <li>Next.js</li>
-    <li>Nuxt</li>
-    <li>Redwood</li>
-    <li>Remix</li>
-    <li>Ruby on Rails</li>
-    <li>SvelteKit</li>
-    <li>T3</li>
+    <li>
+      Analog<br/>
+      <sup>Tech Stack: <i>TypeScript, Angular</i>.</sup>
+    </li>
+    <li>
+      Blitz<br/>
+      <sup>Tech Stack: <i>TypeScript, React, Next.js</i>.</sup>
+    </li>
+    <li>
+      Copper<br/>
+      <sup>Tech Stack: <i>Golang, React</i>.</sup>
+    </li>
+    <li>
+      JD App<br/>
+      <sup>Tech Stack: <i>TypeScript, Solid</i>.</sup>
+    </li>
+    <li>
+      Laravel<br/>
+      <sup>Tech Stack: <i>PHP</i>.</sup>
+    </li>
+    <li>
+      Next.js<br/>
+      <sup>Tech Stack: <i>TypeScript, React</i>.</sup>
+    </li>
+    <li>
+      Nuxt<br/>
+      <sup>Tech Stack: <i>JavaScript, Vue.js</i>.</sup>
+    </li>
+    <li>
+      Redwood<br/>
+      <sup>Tech Stack: <i>TypeScript, React</i>.</sup>
+    </li>
+    <li>
+      Remix<br/>
+      <sup>Tech Stack: <i>TypeScript, React</i>.</sup>
+    </li>
+    <li>
+      Ruby on Rails<br/>
+      <sup>Tech Stack: <i>Ruby</i>.</sup>
+    </li>
+    <li>
+      SvelteKit<br/>
+      <sup>Tech Stack: <i>TypeScript, Svelte</i>.</sup>
+    </li>
+    <li>
+      T3<br/>
+      <sup>Tech Stack: <i>TypeScript, React, Next.js</i>.</sup>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary><b>Headless CMS</b></summary>
   <ul>
-    <li>Directus</li>
-    <li>Strapi</li>
-    <li>Tina</li>
+    <li>
+      Directus<br/>
+      <sup>Tech Stack: <i>TypeScript, SQLite</i>.</sup>
+    </li>
+    <li>
+      Strapi<br/>
+      <sup>Tech Stack: <i>JavaScript</i>.</sup>
+    </li>
+    <li>
+      Tina<br/>
+      <sup>Tech Stack: <i>TypeScript</i>.</sup>
+    </li>
   </ul>
 </details>
 
@@ -287,28 +435,58 @@ stacks:
 <details>
 <summary><b>Slides</b></summary>
   <ul>
-    <li>Slidev</li>
+    <li>
+      Slidev<br/>
+      <sup>Tech Stack: <i>JavaScript, Vue.js</i>.</sup>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary><b>Static Site Generators (SSG)</b></summary>
   <ul>
-    <li>Astro</li>
-    <li>Docusaurus</li>
-    <li>Eleventy</li>
-    <li>Gatsby</li>
-    <li>Hugo</li>
-    <li>Lume</li>
-    <li>VitePress</li>
-    <li>VuePress</li>
+    <li>
+      Astro<br/>
+      <sup>Tech Stack: <i>JavaScript</i>.</sup>
+    </li>
+    <li>
+      Docusaurus<br/>
+      <sup>Tech Stack: <i>TypeScript, React</i>.</sup>
+    </li>
+    <li>
+      Eleventy<br/>
+      <sup>Tech Stack: <i>JavaScript</i>.</sup>
+    </li>
+    <li>
+      Gatsby<br/>
+      <sup>Tech Stack: <i>JavaScript, React</i>.</sup>
+    </li>
+    <li>
+      Hugo<br/>
+      <sup>Tech Stack: <i>Golang</i>.</sup>
+    </li>
+    <li>
+      Lume<br/>
+      <sup>Tech Stack: <i>TypeScript, Deno</i>.</sup>
+    </li>
+    <li>
+      VitePress<br/>
+      <sup>Tech Stack: <i>JavaScript, Vue.js</i>.</sup>
+    </li>
+    <li>
+      VuePress<br/>
+      <sup>Tech Stack: <i>JavaScript, Vue.js</i>.</sup>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary><b>Video Frameworks</b></summary>
   <ul>
-    <li>Remotion</li>
+    <li>
+      Remotion<br/>
+      <sup>Tech Stack: <i>TypeScript, React/Remix</i>.</sup>
+    </li>
   </ul>
 </details>
 
