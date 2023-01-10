@@ -1,0 +1,37 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Hexo sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# The Docker services.
+services:
+  # The Hexo app container.
+  hexo:
+    # Build the Docker image from the Dockerfile.
+    build:
+      context: '.'
+    image: hexo:latest
+    container_name: ${APP_CONTAINER_NAME:-hexo_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:${APP_PORT:-80}
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Hexo CLI dev server - https://hexo.io/docs/commands#server
+    command: [
+      "hexo", "server",
+      "--port", "${APP_PORT:-80}"
+    ]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-hexo_local}"
