@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.8.2] - 2023-01-18
+### Changed
+- Renamed Docker Compose files to follow compose specifications.
+- Readme to adopt Compose V2 specifications.
+
 ## [v0.8.1] - 2023-01-08
 ### Added
 - TL;DR section in Readme.
