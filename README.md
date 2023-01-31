@@ -167,7 +167,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **77** samples included in the ***Playground*** repository. 
+There are currently **78** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -258,6 +258,16 @@ stacks:
     <li>
       PrestaShop<br/>
       <sup>Tech Stack: <i>PHP, MySQL</i></sup>
+    </li>
+  </ul>
+</details>
+
+<details>
+<summary><b>Email Generators</b></summary>
+  <ul>
+    <li>
+      React Email<br/>
+      <sup>Tech Stack: <i>React, TypeScript, Next.js</i></sup>
     </li>
   </ul>
 </details>
