@@ -13,6 +13,8 @@ services:
     # https://hub.docker.com/_/node
     image: node:alpine
     container_name: ${APP_CONTAINER_NAME:-nextjs_app}
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
     networks:
       - local
     # Map the app container exposed port to the host port.
