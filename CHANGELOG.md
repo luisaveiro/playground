@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.9.0] - 2023-02-08
+### Added
+- Tech stack samples:  
+React Email, Goravel
+
+### Changed
+- Disabled telemetry setting for Next.js sample.
+
 ## [v0.8.2] - 2023-01-18
 ### Changed
 - Renamed Docker Compose files to follow compose specifications.
