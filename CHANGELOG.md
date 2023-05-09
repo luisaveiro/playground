@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.10.0] - 2023-05-09
+### Added
+- Tech stack samples:  
+Julia
+
 ## [v0.9.0] - 2023-02-08
 ### Added
 - Tech stack samples:  
