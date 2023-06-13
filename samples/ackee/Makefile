@@ -26,8 +26,8 @@ endif
 # https://github.com/electerious/Ackee/blob/master/docs/Get%20started.md
 #--------------------------------------------------------------------------
 ackee:
-	exec docker run -it --rm --name playground \
+	git clone https://github.com/electerious/Ackee.git $(PWD)${CODE_DIR} && \
+  exec docker run -it --rm --name playground \
     -v $(PWD)${CODE_DIR}:/app \
     -w="/app" \
-    node:latest /bin/sh -c \
-      "git clone https://github.com/electerious/Ackee.git . && yarn install"
+    node:latest /bin/sh -c "yarn install"
