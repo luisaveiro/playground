@@ -167,7 +167,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **81** samples included in the ***Playground*** repository. 
+There are currently **82** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -509,6 +509,16 @@ stacks:
     <li>
       Remotion<br/>
       <sup>Tech Stack: <i>TypeScript, React/Remix</i>.</sup>
+    </li>
+  </ul>
+</details>
+
+<details>
+<summary><b>WebSockets</b></summary>
+  <ul>
+    <li>
+      Soketi<br/>
+      <sup>Tech Stack: <i>JavaScript, Node.js</i>.</sup>
     </li>
   </ul>
 </details>
