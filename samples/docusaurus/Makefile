@@ -25,7 +25,7 @@ endif
 docker_command=docker run -it --rm --name playground \
   -v $(PWD)${CODE_DIR}:/app/${APP_NAME} \
   -w="/app" \
-  node:alpine /bin/sh -c
+  node:18-alpine /bin/sh -c
 
 #--------------------------------------------------------------------------
 # Makefile targets.

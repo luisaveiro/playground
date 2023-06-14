@@ -31,4 +31,4 @@ jd-app:
   -v $(PWD)${CODE_DIR}:/app \
   -v $(PWD)/installer.sh:/setup/installer.sh \
   -w="/setup" \
-  node:alpine /bin/sh -c "./installer.sh"
+  node:18-alpine /bin/sh -c "./installer.sh"

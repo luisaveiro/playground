@@ -14,7 +14,7 @@ services:
   # The SvelteKit app container.
   sveltekit:
     # https://hub.docker.com/_/node
-    image: node:alpine
+    image: node:18-alpine
     container_name: ${APP_CONTAINER_NAME:-sveltekit_app}
     networks:
       - local

@@ -30,4 +30,4 @@ sveltekit:
 	exec docker run -it --rm --name playground \
     -v $(PWD)${CODE_DIR}:/app \
     -w="/app" \
-    node:alpine /bin/sh -c "npm init svelte . && yarn install"
+    node:18-alpine /bin/sh -c "npm init svelte . && yarn install"
