@@ -6,6 +6,9 @@
 # Docker compose version - https://docs.docker.com/compose/compose-file
 version: "3.9"
 
+# Sets the project name.
+name: playground
+
 # The Docker services.
 services:
   # The Express app container.
