@@ -1,0 +1,39 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Soketi sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Sets the project name.
+name: playground
+
+# The Docker services.
+services:
+  # The Soketi app container.
+  soketi:
+    # https://hub.docker.com/_/node
+    image: node:16
+    container_name: ${APP_CONTAINER_NAME:-soketi_app}
+    environment:
+      SOKETI_DEBUG: true
+      SOKETI_METRICS_ENABLED: true
+      SOKETI_METRICS_SERVER_PORT: ${METRICS_SERVER_PORT:-9601}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-6001}:6001
+      - ${METRICS_SERVER_PORT:-9601}:${METRICS_SERVER_PORT:-9601}
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Wiki.js dev server.
+    command: ['node', 'bin/server.js', 'start']
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-soketi_local}"
