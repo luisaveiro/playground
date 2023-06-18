@@ -11,7 +11,7 @@ name: playground
 
 # The Docker services.
 services:
-  # The Larave app container.
+  # The Laravel app container.
   laravel:
     # https://hub.docker.com/_/php
     image: php:latest
