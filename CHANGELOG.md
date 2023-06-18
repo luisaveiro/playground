@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.12.0] - 2023-06-18
+### Added
+- Compose project name to all sample's Docker Compose files.
+- Tech stack samples:  
+Soketi, Statamic
+
+### Changed
+- Node alpine version to be locked to 18-alpine.
+
+### Fixed
+- Docker Compose comment for Laravel sample.
+
 ## [v0.11.0] - 2023-06-13
 ### Added
 - Tech stack samples:  
