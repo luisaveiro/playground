@@ -2,7 +2,7 @@
 
 #--------------------------------------------------------------------------
 # The Makefile offers a developer-friendly approach
-# to automate the set up of the Wiki.js sample.
+# to automate the set up of the Soketi sample.
 #
 # You can run the following make command:
 #
