@@ -167,7 +167,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **84** samples included in the ***Playground*** repository. 
+There are currently **85** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -237,6 +237,10 @@ stacks:
     <li>
       Joomla<br/>
       <sup>Tech Stack: <i>PHP, MySQL</i></sup>
+    </li>
+    <li>
+      October CMS<br/>
+      <sup>Tech Stack: <i>Laravel, PHP</i></sup>
     </li>
     <li>
       Statamic<br/>
