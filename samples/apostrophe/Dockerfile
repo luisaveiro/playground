@@ -4,7 +4,7 @@
 #--------------------------------------------------------------------------
 
 # Node.js Docker base image - https://hub.docker.com/_/node
-FROM node:latest AS dev-image
+FROM node:18 AS dev-image
 
 # https://docs.docker.com/engine/reference/builder/#label
 LABEL description="Dockerfile for Playground ApostropheCMS sample."

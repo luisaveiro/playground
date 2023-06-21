@@ -30,4 +30,4 @@ tina:
 	exec docker run -it --rm --name playground \
     -v $(PWD)${CODE_DIR}:/app \
     -w="/app" \
-    node:latest /bin/sh -c "npx create-tina-app@latest ."
+    node:18 /bin/sh -c "npx create-tina-app@latest ."

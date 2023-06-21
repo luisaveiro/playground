@@ -14,7 +14,7 @@ services:
   # The Astro app container.
   astro:
     # https://hub.docker.com/_/node
-    image: node:latest
+    image: node:18
     container_name: ${APP_CONTAINER_NAME:-astro_app}
     networks:
       - local

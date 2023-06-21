@@ -30,6 +30,6 @@ eleventy:
 	exec docker run -it --rm --name playground \
     -v $(PWD)${CODE_DIR}:/app \
     -w="/app" \
-    node:latest /bin/sh -c \
+    node:18 /bin/sh -c \
       "npm init -y && npm install --save-dev @11ty/eleventy && \
       echo '<!doctype html><html><head><title>Title</title></head><body><p>Hello, World!</p></body></html>' > index.html"

@@ -30,6 +30,6 @@ vitepress:
 	exec docker run -it --rm --name playground \
     -v $(PWD)${CODE_DIR}:/app \
     -w="/app" \
-    node:latest /bin/sh -c \
+    node:18 /bin/sh -c \
       "yarn init && yarn add --dev vitepress vue && mkdir docs && \
       echo '# Hello, World!' >> docs/index.md"
