@@ -1,5 +1,5 @@
 <h5 align="center">
-  Playground Docusaurus sample.
+  Playground Egg sample.
 </h5>
 
 ---
