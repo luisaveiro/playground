@@ -167,7 +167,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **87** samples included in the ***Playground*** repository. 
+There are currently **90** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -295,6 +295,10 @@ stacks:
     <li>
       Angular (Angular CLI)<br/>
       <sup>Tech Stack: <i>TypeScript</i>.</sup>
+    </li>
+    <li>
+      ASP.NET<br/>
+      <sup>Tech Stack: <i>C#, .NET</i>.</sup>
     </li>
     <li>
       Django<br/>
@@ -514,6 +518,14 @@ stacks:
       VuePress<br/>
       <sup>Tech Stack: <i>JavaScript, Vue.js</i>.</sup>
     </li>
+  </ul>
+</details>
+
+<details>
+<summary><b>UI Kits</b></summary>
+  <ul>
+    <li>Pines UI</li>
+    <li>UIkit</li>
   </ul>
 </details>
 
