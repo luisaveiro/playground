@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.13.0] - 2023-06-30
+### Added
+- Tech stack samples:  
+ASP.NET, htmx, jQuery, October CMS, Pines UI, PyScript, UIkit
+- Readme for samples:  
+Angular, Astro, Docusaurus, Egg
+
+### Changed
+- Node latest version to be locked to 18.
+
 ## [v0.12.0] - 2023-06-18
 ### Added
 - Compose project name to all sample's Docker Compose files.
