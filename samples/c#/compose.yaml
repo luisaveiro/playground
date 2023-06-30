@@ -1,0 +1,34 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the C# sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Sets the project name.
+name: playground
+
+# The Docker services.
+services:
+  # The C# app container
+  csharp:
+    # https://hub.docker.com/_/microsoft-dotnet-sdk/
+    image: mcr.microsoft.com/dotnet/sdk:7.0
+    container_name: ${APP_CONTAINER_NAME:-csharp_app}
+    networks:
+      - local
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start The .NET CLI dev server.
+    # https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-watch
+    command: ["dotnet", "watch"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-csharp_local}"
