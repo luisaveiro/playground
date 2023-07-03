@@ -1,0 +1,44 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the React Native sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Sets the project name.
+name: playground
+
+# The Docker services.
+services:
+  # The React Native app container.
+  react-native:
+    # https://hub.docker.com/_/node
+    image: node:lts-alpine
+    container_name: ${APP_CONTAINER_NAME:-react-native_app}
+    environment:
+      EXPO_NO_TELEMETRY: true
+      # Set Expo dev server to use host IP Address not the container IP Address.
+      EXPO_PACKAGER_PROXY_URL: http://${PROXY_URL}:${APP_PORT:-80}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:${APP_PORT:-80}
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Expo dev server.
+    # https://docs.expo.dev/more/expo-cli/#develop
+    command: [
+      "npx", "expo", "start",
+      "--port", "${APP_PORT:-80}"
+    ]
+
+# Docker networks
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-react-native_local}"
