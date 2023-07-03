@@ -167,7 +167,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **91** samples included in the ***Playground*** repository. 
+There are currently **92** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -452,6 +452,16 @@ stacks:
     <li>
       Tina<br/>
       <sup>Tech Stack: <i>TypeScript</i>.</sup>
+    </li>
+  </ul>
+</details>
+
+<details>
+<summary><b>Hybrid Mobile Frameworks</b></summary>
+  <ul>
+    <li>
+      React Native<br/>
+      <sup>Tech Stack: <i>React, JavaScript</i></sup>
     </li>
   </ul>
 </details>
