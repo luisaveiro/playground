@@ -460,6 +460,10 @@ stacks:
 <summary><b>Hybrid Mobile Frameworks</b></summary>
   <ul>
     <li>
+      Ionic<br/>
+      <sup>Tech Stack: <i>Angular, React, Vue.js, JavaScript</i></sup>
+    </li>
+    <li>
       React Native<br/>
       <sup>Tech Stack: <i>React, JavaScript</i></sup>
     </li>
