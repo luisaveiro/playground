@@ -14,7 +14,7 @@ services:
   # The Redwood app container.
   redwood:
     # https://hub.docker.com/_/node
-    image: node:16-alpine
+    image: node:18-alpine
     container_name: ${APP_CONTAINER_NAME:-redwood_app}
     networks:
       - local
