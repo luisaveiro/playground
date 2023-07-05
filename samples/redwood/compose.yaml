@@ -1,6 +1,6 @@
 #--------------------------------------------------------------------------
 # ! The Docker Compose file is configured for local environments.
-# ! Do not deploy the Redwood sample in production environments.
+# ! Do not deploy the RedwoodJS sample in production environments.
 #--------------------------------------------------------------------------
 
 # Docker compose version - https://docs.docker.com/compose/compose-file
@@ -11,7 +11,7 @@ name: playground
 
 # The Docker services.
 services:
-  # The Redwood app container.
+  # The RedwoodJS app container.
   redwood:
     # https://hub.docker.com/_/node
     image: node:18-alpine
@@ -26,7 +26,7 @@ services:
     volumes:
       - .${CODE_DIR:-/code}:/app
     working_dir: /app
-    # Start the Redwood CLI dev server.
+    # Start the RedwoodJS CLI dev server.
     # https://redwoodjs.com/docs/cli-commands#dev
     command: [
       'yarn', 'rw', 'dev',
