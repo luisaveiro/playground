@@ -167,12 +167,12 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **92** samples included in the ***Playground*** repository. 
+There are currently **93** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
 <details>
-<summary><b>Programming Languages</b></summary>
+<summary><b>Programming Languages (Hello, World!)</b></summary>
   <ul>
     <li>Bash</li>
     <li>C</li>
@@ -202,6 +202,16 @@ stacks:
     <li>
       Ackee<br/>
       <sup>Tech Stack: <i>JavaScript, Node.js, MongoDB</i>.</sup>
+    </li>
+  </ul>
+</details>
+
+<details>
+<summary><b>App Frameworks</b></summary>
+  <ul>
+    <li>
+      Flutter (Web)<br/>
+      <sup>Tech Stack: <i>Dart</i>.</sup>
     </li>
   </ul>
 </details>
