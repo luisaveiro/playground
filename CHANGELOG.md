@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.14.0] - 2023-07-06
+### Added
+- Tech stack samples:  
+C#, Flutter, Ionic, React Native
+
+### Fixed
+- RedwoodJS sample to use Node version 18.
+
 ## [v0.13.0] - 2023-06-30
 ### Added
 - Tech stack samples:  
