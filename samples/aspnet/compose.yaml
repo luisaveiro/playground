@@ -20,7 +20,7 @@ services:
       - local
     # Map the app container exposed port to the host port.
     ports:
-      - ${APP_PORT:-80}:80
+      - ${APP_PORT:-80}:${APP_PORT:-80}
     volumes:
       - .${CODE_DIR:-/code}:/app
     working_dir: /app

@@ -36,5 +36,5 @@ aspnet:
     mcr.microsoft.com/dotnet/sdk:7.0 /bin/sh -c \
       "dotnet new webapp --no-https -f net7.0 && \
       cd Properties && \
-      sed -E 's/\"applicationUrl\": \"[^\"]+\"/\"applicationUrl\": \"http:\/\/0.0.0.0:80\"/' \
+      sed -E 's/\"applicationUrl\": \"[^\"]+\"/\"applicationUrl\": \"http:\/\/0.0.0.0:${APP_PORT}\"/' \
       launchSettings.json > temp; cat temp > launchSettings.json; rm temp"
