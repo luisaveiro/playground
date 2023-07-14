@@ -1,0 +1,38 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Spark.NET sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Sets the project name.
+name: playground
+
+# The Docker services.
+services:
+  # The Spark.NET app container.
+  spark:
+    # Build the Docker image from the Dockerfile.
+    build:
+      context: '.'
+    image: spark:latest
+    container_name: ${APP_CONTAINER_NAME:-spark_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:80
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start The .NET CLI dev server.
+    # https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-watch
+    command: ["dotnet", "watch"]
+
+# The Docker networks.
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-spark_local}"
