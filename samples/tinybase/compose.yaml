@@ -1,0 +1,39 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the TinyBase sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Sets the project name.
+name: playground
+
+# The Docker services.
+services:
+  # The TinyBase app container.
+  tinybase:
+    # https://hub.docker.com/_/node
+    image: node:lts-alpine
+    container_name: ${APP_CONTAINER_NAME:-tinybase_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:${APP_PORT:-80}
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Vite CLI dev server.
+    command: [
+      "yarn", "run", "dev",
+      "--port", "${APP_PORT:-80}",
+      "--host", "0.0.0.0"
+    ]
+
+# Docker networks
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-tinybase_local}"
