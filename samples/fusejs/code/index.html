@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fuse.js CDN script -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+
+  <!-- Interactive UI styling -->
+  <style type="text/css">
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    div {
+      height: 100vh;
+    }
+
+    h3 {
+      margin: 5px 0px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .column {
+      float: left;
+      width: 33.33%;
+    }
+
+    .column > div {
+      padding: 0 2%;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    textarea {
+      width: 100%;
+      height: 90%;
+    }
+
+    input {
+      width: 50%;
+      height: 5%;
+    }
+
+    pre {
+      width: 100%;
+      height: 90%;
+      margin: 0;
+      background-color: #ccc;
+    }
+  </style>
+  <title>Fuse.js</title>
+</head>
+<body>
+  <!-- Interactive UI example -->
+  <div class="row">
+    <div class="column">
+      <div>
+        <h3>JSON List</h3>
+        <textarea></textarea>
+      </div>
+    </div>
+    <div class="column">
+      <div class="center">
+        <input placeholder="Keyword Search..."/>
+      </div>
+    </div>
+    <div class="column">
+      <div>
+        <h3>Search Results</h3>
+        <pre></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const list = ["Old Man's War", "The Lock Artist"];
+
+    const options = {
+      includeScore: true,
+    };
+
+    const fuse = new Fuse(list, options);
+
+    const textarea = document.querySelector('textarea');
+    textarea.value = JSON.stringify(list, undefined, 2);
+
+    textarea.addEventListener('blur', function (event) {
+      try {
+        const updatedList = JSON.parse(event.target.value);
+        textarea.value = JSON.stringify(updatedList, undefined, 2);
+
+        fuse.setCollection(updatedList);
+      } catch (e) {
+        return;
+      }
+    });
+
+    document.querySelector('input').addEventListener('input', function (event) {
+      let result = fuse.search(event.target.value);
+
+      document.querySelector('pre').innerHTML = JSON.stringify(result, undefined, 2);
+    });
+  </script>
+</body>
+</html>
