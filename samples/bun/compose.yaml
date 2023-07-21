@@ -13,10 +13,8 @@ name: playground
 services:
   # The Bun app container
   bun:
-    # Build the Docker image from the Dockerfile.
-    build:
-      context: '.'
-    image: bun:latest
+    # https://hub.docker.com/r/oven/bun
+    image: oven/bun:latest
     init: true
     container_name: ${APP_CONTAINER_NAME:-bun_app}
     networks:
@@ -30,8 +28,8 @@ services:
       - .${CODE_DIR:-/code}:/app
     working_dir: /app
     # Start the Bun CLI dev server.
-    # https://github.com/Jarred-Sumner/bun
-    command: ["bun", "run", "./app.js"]
+    # https://bun.sh/docs/runtime/hot
+    command: ["bun", "--watch", "./app.js"]
 
 # Docker networks
 networks:
