@@ -1,0 +1,38 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Elysia sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Sets the project name.
+name: playground
+
+# Docker services
+services:
+  # The Elysia app container
+  elysia:
+    # https://hub.docker.com/r/oven/bun
+    image: oven/bun:latest
+    init: true
+    container_name: ${APP_CONTAINER_NAME:-elysia_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-80}:3000
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Bun CLI dev server.
+    # https://elysiajs.com/quick-start.html
+    command: ["bun", "run", "dev"]
+
+# Docker networks
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-elysia_local}"
