@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.15.0] - 2023-07-25
+### Added
+- DotEnv example file for ASP.NET sample.
+- DotEnv example file for C# sample.
+- Tech stack samples:  
+Elysia, Fuse.js, Spark.NET, TinyBase
+
+### Fixed
+- Configure port mapping for ASP.NET sample.
+
+### Changed
+- Bun sample to use official Docker image.
+
 ## [v0.14.0] - 2023-07-06
 ### Added
 - Tech stack samples:  
