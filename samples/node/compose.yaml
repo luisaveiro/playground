@@ -27,7 +27,7 @@ services:
     working_dir: /app
     # Start the Node.js webserver.
     # https://nodejs.org/api/cli.html#command-line-api
-    command: ["node", "app.js"]
+    command: ["node", "--watch", "app.js"]
 
 # Docker networks
 networks:
