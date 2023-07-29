@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- pusher-js script -->
+  <script src="https://js.pusher.com/8.0.1/pusher.min.js"></script>
+
+  <!-- Interactive UI styling -->
+  <style type="text/css">
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    div {
+      height: 100vh;
+    }
+
+    h3 {
+      margin: 5px 0px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    .column > div {
+      padding: 0 2%;
+    }
+
+    .half {
+      height: 50vh;
+    }
+
+    #events {
+      width: 100%;
+      height: 90%;
+      margin: 0;
+      padding: 5px;
+      background-color: #ccc;
+    }
+
+    #events p {
+      margin: 0px;
+      padding-bottom: 5px;
+    }
+
+    #events span {
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    form {
+      height: 45vh;
+    }
+
+    textarea {
+      width: 99%;
+      height: 90%;
+      display: block;
+      margin: 10px 0px;
+    }
+
+    button {
+      float: right;
+      width: 100px;
+      height: 25px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 10px 0px;
+      border-bottom: 1px solid;
+    }
+  </style>
+  <title>Soketi</title>
+</head>
+<body>
+  <!-- Interactive UI example -->
+  <div class="row">
+    <div class="column">
+      <div class="half">
+        <h3>Message</h3>
+        <form>
+            <textarea name="message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+      </div>
+      <div class="half">
+        <h3>WebSockets Stats</h3>
+        <table>
+          <tr>
+            <td>Status</td>
+            <td id="connection-status"></td>
+          </tr>
+          <tr>
+            <td>Session ID</td>
+            <td id="session-id"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="column">
+      <div>
+        <h3>WebSockets Events</h3>
+        <div id="events"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const client = new Pusher('app-key', {
+      cluster: 'localhost',
+      wsHost: 'localhost',
+      wsPort: 6001,
+      forceTLS: false,
+      encrypted: false,
+      disableStats: true,
+      enabledTransports: ['ws', 'wss'],
+    });
+
+    client.connection.bind('state_change', function(states) {
+      document.getElementById('connection-status').innerHTML = states.current;
+    });
+
+    document.getElementById('session-id').innerHTML = client.sessionID;
+
+    client.subscribe('playground-channel').bind('sample-event', (event) => {
+      const events = document.getElementById('events');
+
+      events.innerHTML = events.innerHTML +
+        `<p><span>user-${event.sessionId}:</span> ${event.message}</p>`;
+    });
+
+    document.querySelector('form').addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+      const formData = new FormData(event.target);
+      formData.append('sessionId', client.sessionID);
+
+      fetch('http://localhost:8080', {
+        headers,
+        method: 'POST',
+        body: new URLSearchParams(formData).toString(),
+      });
+    });
+  </script>
+</body>
+</html>
