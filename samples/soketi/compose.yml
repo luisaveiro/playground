@@ -11,6 +11,41 @@ name: playground
 
 # The Docker services.
 services:
+  # The Soketi client app container
+  client:
+    # https://hub.docker.com/_/nginx
+    image: nginx:alpine
+    container_name: ${CLIENT_CONTAINER_NAME:-soketi_client}
+    depends_on:
+      - soketi
+      - server
+    networks:
+      - local
+    ports:
+      - ${CLIENT_PORT:-80}:80
+    # Map the app container exposed port to the host port.
+    volumes:
+      - .${CLIENT_DIR:-/client}:/usr/share/nginx/html
+
+  # The Soketi server app container
+  server:
+    # https://hub.docker.com/_/node
+    image: node:alpine
+    container_name: ${SERVER_CONTAINER_NAME:-soketi_server}
+    depends_on:
+      - soketi
+    networks:
+      - local
+    ports:
+      - ${SERVER_PORT:-8080}:${SERVER_PORT:-8080}
+    tty: true
+    volumes:
+      - .${SERVER_DIR:-/server}:/app
+    working_dir: /app
+    # Start the Node.js webserver.
+    # https://nodejs.org/api/cli.html#command-line-api
+    command: ["npm", "run", "watch"]
+
   # The Soketi app container.
   soketi:
     # https://hub.docker.com/_/node
