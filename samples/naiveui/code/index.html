@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/naive-ui"></script>
+  <title>Naive UI</title>
+</head>
+<body>
+  <div id="app">
+    <n-p>{{ message }}</n-p>
+  </div>
+  <script type="text/javascript">
+    Vue.createApp({
+      setup() {
+        return {
+          message: 'Hello, World!'
+        }
+      }
+    })
+    .use(naive)
+    .mount('#app')
+  </script>
+</body>
+</html>
