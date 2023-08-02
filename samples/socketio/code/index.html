@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.IO</title>
+
+  <!-- Socket.IO script -->
+  <script src="https://cdn.socket.io/4.7.1/socket.io.min.js"></script>
+
+  <!-- Interactive UI styling -->
+  <style type="text/css">
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    div {
+      padding-bottom: 3rem;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.25rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      height: 3rem;
+      box-sizing:
+      border-box;
+      backdrop-filter: blur(10px);
+    }
+
+    input {
+      border: none;
+      padding: 0 1rem;
+      flex-grow: 1;
+      border-radius: 2rem;
+      margin: 0.25rem;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    form > button {
+      background: #333;
+      border: none;
+      padding: 0 1rem;
+      margin: 0.25rem;
+      border-radius: 3px;
+      outline: none;
+      color: #fff;
+    }
+
+    #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #messages > li {
+      padding: 0.5rem 1rem;
+    }
+
+    #messages > li:nth-child(odd) {
+      background: #efefef;
+    }
+  </style>
+</head>
+<body>
+  <!-- Interactive UI example -->
+  <div>
+    <ul id="messages"></ul>
+    <form>
+      <input type="text" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    var socket = io();
+
+    document.querySelector('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const input = document.querySelector('input');
+
+      if (input.value) {
+        socket.emit('submit-event', input.value);
+        input.value = '';
+      }
+    });
+
+    socket.on('broadcast-event', function(event) {
+      const item = document.createElement('li');
+      item.textContent = event;
+      document.getElementById('messages').appendChild(item);
+    });
+  </script>
+</body>
+</html>
