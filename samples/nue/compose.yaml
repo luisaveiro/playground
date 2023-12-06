@@ -1,0 +1,38 @@
+#--------------------------------------------------------------------------
+# ! The Docker Compose file is configured for local environments.
+# ! Do not deploy the Nue sample in production environments.
+#--------------------------------------------------------------------------
+
+# Docker compose version - https://docs.docker.com/compose/compose-file
+version: "3.9"
+
+# Sets the project name.
+name: playground
+
+# Docker services
+services:
+  # The Nue app container
+  nue:
+    # https://hub.docker.com/r/oven/bun
+    image: oven/bun:latest
+    init: true
+    container_name: ${APP_CONTAINER_NAME:-nue_app}
+    networks:
+      - local
+    # Map the app container exposed port to the host port.
+    ports:
+      - ${APP_PORT:-8080}:8080
+    stdin_open: true
+    tty: true
+    volumes:
+      - .${CODE_DIR:-/code}:/app
+    working_dir: /app
+    # Start the Bun CLI dev server.
+    # https://bun.sh/docs/runtime/hot
+    command: ["bun", "--bun", "start"]
+
+# Docker networks
+networks:
+  local:
+    driver: "bridge"
+    name: "${NETWORK_NAME:-nue_local}"
