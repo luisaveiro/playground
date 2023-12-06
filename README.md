@@ -167,7 +167,7 @@ $ docker compose up -d
 
 ## Samples
 
-There are currently **99** samples included in the ***Playground*** repository. 
+There are currently **100** samples included in the ***Playground*** repository. 
 The ***Playground*** samples are categorised into one of the following tech 
 stacks:
 
@@ -358,6 +358,10 @@ stacks:
     <li>
       NestJS<br/>
       <sup>Tech Stack: <i>Node.js</i>.</sup>
+    </li>
+    <li>
+      Nue<br/>
+      <sup>Tech Stack: <i>JavaScript</i>.</sup>
     </li>
     <li>
       Preact (Vite)<br/>
