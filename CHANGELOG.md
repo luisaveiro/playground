@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.16.0] - 2023-12-06
+### Added
+- Client & server code example for Soketi sample.
+- Tech stack samples:  
+Naive UI, Nue, Socket.IO
+
+### Fixed
+- Missing script type for Fuse.js sample.
+- Node sample to have watch mode enabled.
+
 ## [v0.15.0] - 2023-07-25
 ### Added
 - DotEnv example file for ASP.NET sample.
