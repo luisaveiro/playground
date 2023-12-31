@@ -72,8 +72,8 @@ install additional dependencies before you can get started.
 
 ## Disclaimer
 
-> **Note**
-> : The ***Playground*** samples are intended for use in local development 
+> [!IMPORTANT]  
+> The ***Playground*** samples are intended for use in local development 
 environments such as prototyping, tinkering with software stacks, etc. These 
 samples <ins>**MUST NOT**</ins> be deployed in production environments.
 
