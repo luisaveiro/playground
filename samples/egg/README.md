@@ -51,7 +51,7 @@ If you want to learn more about Egg, read the documentation at
 
 ## Disclaimer
 
-> **Note**
+> [!IMPORTANT]  
 > : The ***Playground's*** Egg sample is intended for use in local 
 development environments such as prototyping, tinkering with software stacks, 
 etc. This sample <ins>**must not**</ins> be deployed in production environments.

@@ -54,7 +54,7 @@ If you want to learn more about Angular, read the documentation at
 
 ## Disclaimer
 
-> **Note**
+> [!IMPORTANT]  
 > : The ***Playground's*** Angular sample is intended for use in local 
 development environments such as prototyping, tinkering with software stacks, 
 etc. This sample <ins>**MUST NOT**</ins> be deployed in production environments.
